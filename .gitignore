@@ -1,0 +1,49 @@
+# ── Data files (too large for GitHub) ──────────────────────────
+acrs_data/raw/
+acrs_data/*.parquet
+acrs_data/*.npy
+acrs_data/*.pkl
+loan.csv
+*.csv.gz
+*.zip
+
+# ── Jupyter checkpoints ─────────────────────────────────────────
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# ── Python ──────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# ── Virtual environments ─────────────────────────────────────────
+venv/
+env/
+.env
+.venv/
+
+# ── OS files ────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ─────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Thesis Word docs (keep private) ─────────────────────────────
+*.docx
+*.doc
+*.pdf
+
+# ── Model files (too large, regenerate from notebooks) ───────────
+*.pkl
+*.joblib

@@ -1,0 +1,10 @@
+{
+  "layer": 3,
+  "auc": 0.7424,
+  "ks": 0.3433,
+  "gini": 0.4848,
+  "f1": 0.2189,
+  "drift_alerts_5k": 10,
+  "hitl_rate_pct": 1.0,
+  "audit_rows": 100
+}
