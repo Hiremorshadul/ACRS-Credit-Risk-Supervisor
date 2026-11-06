@@ -1,10 +1,14 @@
 {
   "layer": 2,
-  "auc": 0.7424,
-  "ks": 0.3433,
-  "gini": 0.4848,
-  "f1": 0.2189,
-  "psi_ensemble": 0.0176,
+  "auc": 0.7057,
+  "ks": 0.2974,
+  "gini": 0.4115,
+  "f1": 0.0345,
+  "psi_xgb": 0.0051,
+  "psi_lgbm": 0.0051,
+  "psi_rf": 0.0012,
+  "psi_ensemble": 0.0038,
   "psi_status": "Stable",
-  "shap_top_feature": "debt_settlement_flag_Y"
+  "shap_top_feature": "sub_grade",
+  "shap_top_value": 0.2915
 }
