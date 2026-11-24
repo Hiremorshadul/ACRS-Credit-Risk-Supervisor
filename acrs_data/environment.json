@@ -1,0 +1,44 @@
+{
+  "python": "3.12.7",
+  "numpy": "1.26.4",
+  "pandas": "2.3.1",
+  "scikit-learn": "1.7.1",
+  "xgboost": "3.4.1",
+  "lightgbm": "4.7.0",
+  "shap": "0.52.0",
+  "optuna": "5.0.0",
+  "scipy": "1.16.0",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cpu_count": 12,
+  "seed": 42,
+  "strict_default": true,
+  "data_file": "loan.csv",
+  "data_sha256": "23783ef320e4df24ac113d6e5b830edb909912b7783d49b89aacd5690dc9120c",
+  "data_bytes": 1189395649,
+  "raw_rows": 2260668,
+  "raw_cols": 146,
+  "issue_first": "Jun 2007",
+  "issue_last": "Dec 2018",
+  "modelled_rows": 1303638,
+  "partitions": {
+    "train": {
+      "rows": 449414,
+      "default_rate": 0.17,
+      "first": "Jun 2007",
+      "last": "Dec 2014"
+    },
+    "val": {
+      "rows": 373412,
+      "default_rate": 0.2016,
+      "first": "Jan 2015",
+      "last": "Dec 2015"
+    },
+    "test": {
+      "rows": 480812,
+      "default_rate": 0.2288,
+      "first": "Jan 2016",
+      "last": "Dec 2018"
+    }
+  },
+  "n_features": 77
+}

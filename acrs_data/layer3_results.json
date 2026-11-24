@@ -1,14 +1,250 @@
 {
   "layer": 3,
-  "auc": 0.7057,
-  "ks": 0.2974,
-  "gini": 0.4115,
-  "f1": 0.0345,
-  "drift_alerts_5k": 10,
-  "drift_breakdown": {
-    "DDM_DRIFT": 9,
-    "ADWIN_DRIFT": 1
+  "policy": {
+    "t_star": 0.2776,
+    "t_low": 0.2621,
+    "t_high": 0.2955,
+    "refer_share_target": 0.05,
+    "chosen_on": "validation (2015), realised profit/loss",
+    "validation_profit_approve_all": 191249698.0,
+    "validation_profit_approve_below_t_star": 274347415.0
   },
-  "hitl_rate_pct": 3.1,
-  "audit_rows": 2000
+  "monitor_settings": {
+    "window": 500,
+    "window_threshold": 0.026,
+    "window_reference_mean_pd": 0.1723,
+    "ph_delta": 0.005,
+    "ph_lambda": 10.48,
+    "ddm_warning_sd": 2.0,
+    "ddm_drift_sd": 3.0,
+    "calibrated_on": "no-change streams from Jan\u2013Jun 2015 (99th percentile of the maximum statistic)"
+  },
+  "detector_validation": [
+    {
+      "scenario": "no_change",
+      "detector": "window",
+      "false_alarms_per_10k_loans": 0.0,
+      "detection_rate": null,
+      "median_delay_loans": null
+    },
+    {
+      "scenario": "no_change",
+      "detector": "page_hinkley",
+      "false_alarms_per_10k_loans": 0.0,
+      "detection_rate": null,
+      "median_delay_loans": null
+    },
+    {
+      "scenario": "no_change",
+      "detector": "ddm_delayed_labels",
+      "false_alarms_per_10k_loans": 0.68,
+      "detection_rate": null,
+      "median_delay_loans": null
+    },
+    {
+      "scenario": "real_change_2015_to_2016_18",
+      "detector": "window",
+      "false_alarms_per_10k_loans": 0.0,
+      "detection_rate": 0.0,
+      "median_delay_loans": null
+    },
+    {
+      "scenario": "real_change_2015_to_2016_18",
+      "detector": "page_hinkley",
+      "false_alarms_per_10k_loans": 0.0,
+      "detection_rate": 0.0,
+      "median_delay_loans": null
+    },
+    {
+      "scenario": "real_change_2015_to_2016_18",
+      "detector": "ddm_delayed_labels",
+      "false_alarms_per_10k_loans": 1.16,
+      "detection_rate": 0.18,
+      "median_delay_loans": 1828
+    },
+    {
+      "scenario": "injected_riskier_mix",
+      "detector": "window",
+      "false_alarms_per_10k_loans": 0.0,
+      "detection_rate": 1.0,
+      "median_delay_loans": 104
+    },
+    {
+      "scenario": "injected_riskier_mix",
+      "detector": "page_hinkley",
+      "false_alarms_per_10k_loans": 0.0,
+      "detection_rate": 1.0,
+      "median_delay_loans": 72
+    },
+    {
+      "scenario": "injected_riskier_mix",
+      "detector": "ddm_delayed_labels",
+      "false_alarms_per_10k_loans": 1.32,
+      "detection_rate": 0.97,
+      "median_delay_loans": 228
+    }
+  ],
+  "test_stream": {
+    "order_within_month": "random (fixed seed); issue dates are monthly",
+    "window_alarms": 3,
+    "page_hinkley_alarms": 3,
+    "ddm_delayed_label_alarms": 1,
+    "file_order_window_alarms": 226,
+    "file_order_page_hinkley_alarms": 48,
+    "window_alarm_months": [
+      "2016-01",
+      "2018-12"
+    ],
+    "ddm_alarm_months": [
+      "2016-03"
+    ]
+  },
+  "decisions_full_test": {
+    "approve_rate": 0.8237,
+    "refer_rate": 0.0504,
+    "decline_rate": 0.126,
+    "default_rate_approved": 0.1828,
+    "default_rate_referred": 0.3724,
+    "default_rate_declined": 0.4725,
+    "approval_errors": 72386,
+    "decline_errors": 31950,
+    "profit_if_referred_declined": -128518501.6741,
+    "profit_if_referred_approved": -180596869.7033,
+    "share_of_defaults_caught": 0.3421,
+    "precision_decline": 0.4725,
+    "recall_decline": 0.2601,
+    "f1_decline": 0.3355,
+    "precision_flagged": 0.4439,
+    "recall_flagged": 0.3421,
+    "f1_flagged": 0.3864
+  },
+  "baselines": {
+    "approve_all_profit": -401946965.0,
+    "single_threshold_t_star_profit": -153202891.0,
+    "single_threshold_t_star_f1": 0.3633
+  },
+  "demo": {
+    "loans": 2000,
+    "decisions": {
+      "AUTO_APPROVE": 1684,
+      "AUTO_DECLINE": 228,
+      "REFER_TO_HUMAN": 88
+    },
+    "first_month": "2016-01",
+    "last_month": "2016-01",
+    "audit_file": "audit_trail_20261121_193025.csv",
+    "hash_chain_valid": true,
+    "first_three": [
+      {
+        "loan_idx": 23138,
+        "issue_month": "2016-01",
+        "true_label": "DEFAULT",
+        "pd": 0.2291,
+        "band": "Low",
+        "monitor": "OK",
+        "decision": "AUTO_APPROVE",
+        "reason": "",
+        "top3": [
+          [
+            "acc_open_past_24mths",
+            0.0403
+          ],
+          [
+            "sub_grade",
+            0.0292
+          ],
+          [
+            "term",
+            -0.0203
+          ]
+        ]
+      },
+      {
+        "loan_idx": 20615,
+        "issue_month": "2016-01",
+        "true_label": "PAID",
+        "pd": 0.0429,
+        "band": "Low",
+        "monitor": "OK",
+        "decision": "AUTO_APPROVE",
+        "reason": "",
+        "top3": [
+          [
+            "sub_grade",
+            -0.034
+          ],
+          [
+            "int_rate",
+            -0.0171
+          ],
+          [
+            "grade",
+            -0.0139
+          ]
+        ]
+      },
+      {
+        "loan_idx": 27154,
+        "issue_month": "2016-01",
+        "true_label": "PAID",
+        "pd": 0.4151,
+        "band": "High",
+        "monitor": "OK",
+        "decision": "AUTO_DECLINE",
+        "reason": "",
+        "top3": [
+          [
+            "sub_grade",
+            0.077
+          ],
+          [
+            "term",
+            0.065
+          ],
+          [
+            "grade",
+            0.0335
+          ]
+        ]
+      }
+    ]
+  },
+  "latency": {
+    "score": {
+      "mean_ms": 77.84,
+      "median_ms": 75.44,
+      "p95_ms": 88.1
+    },
+    "shap": {
+      "mean_ms": 233.63,
+      "median_ms": 227.02,
+      "p95_ms": 297.63
+    },
+    "monitor": {
+      "mean_ms": 0.01,
+      "median_ms": 0.01,
+      "p95_ms": 0.02
+    },
+    "decide_and_log": {
+      "mean_ms": 1.21,
+      "median_ms": 0.77,
+      "p95_ms": 1.06
+    },
+    "layer3_total_per_loan": {
+      "mean_ms": 312.69,
+      "median_ms": 305.57,
+      "p95_ms": 379.86
+    },
+    "layer1_batch_scoring": {
+      "loans": 100000,
+      "seconds": 1.22,
+      "loans_per_second": 81763
+    },
+    "process_memory_mb": 1272.0,
+    "hardware": {
+      "platform": "Windows-11-10.0.26200-SP0",
+      "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+      "cpu_count": 12
+    }
+  }
 }

@@ -1,0 +1,33 @@
+{
+  "xgb": {
+    "n_estimators": 394,
+    "max_depth": 3,
+    "learning_rate": 0.05687019004574091,
+    "subsample": 0.7222790607994186,
+    "colsample_bytree": 0.9303960651171188
+  },
+  "lgbm": {
+    "n_estimators": 425,
+    "max_depth": 3,
+    "learning_rate": 0.07477957039353499,
+    "subsample": 0.6158536464884385,
+    "colsample_bytree": 0.631845300449806
+  },
+  "rf": {
+    "n_estimators": 400,
+    "max_depth": 10,
+    "max_features": "log2"
+  },
+  "best_val_auc_tuning_sample": {
+    "xgb": 0.7379,
+    "lgbm": 0.7371,
+    "rf": 0.7341
+  },
+  "n_trials": 30,
+  "tuning_sample": 100000,
+  "seed": 42,
+  "lr": {
+    "C": 1.0,
+    "max_iter": 5000
+  }
+}

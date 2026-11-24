@@ -1,0 +1,26 @@
+{
+  "model": "XGBoost, 100 trees, depth 5, learning rate 0.1",
+  "leakage_columns_encoded": [
+    "total_pymnt",
+    "total_pymnt_inv",
+    "total_rec_prncp",
+    "total_rec_int",
+    "total_rec_late_fee",
+    "recoveries",
+    "collection_recovery_fee",
+    "last_pymnt_amnt",
+    "installment",
+    "funded_amnt_inv",
+    "debt_settlement_flag_Y"
+  ],
+  "with_leakage": {
+    "features": 88,
+    "val_auc": 0.9998,
+    "test_auc": 0.9999
+  },
+  "without_leakage": {
+    "features": 77,
+    "val_auc": 0.74,
+    "test_auc": 0.7101
+  }
+}

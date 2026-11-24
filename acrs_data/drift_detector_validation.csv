@@ -1,0 +1,10 @@
+scenario,detector,false_alarms_per_10k_loans,detection_rate,median_delay_loans
+no_change,window,0.0,,
+no_change,page_hinkley,0.0,,
+no_change,ddm_delayed_labels,0.68,,
+real_change_2015_to_2016_18,window,0.0,0.0,
+real_change_2015_to_2016_18,page_hinkley,0.0,0.0,
+real_change_2015_to_2016_18,ddm_delayed_labels,1.16,0.18,1828.0
+injected_riskier_mix,window,0.0,1.0,104.0
+injected_riskier_mix,page_hinkley,0.0,1.0,72.0
+injected_riskier_mix,ddm_delayed_labels,1.32,0.97,228.0

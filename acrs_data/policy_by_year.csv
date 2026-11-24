@@ -1,0 +1,4 @@
+year,approve_rate,refer_rate,decline_rate,default_rate_approved,default_rate_referred,default_rate_declined,approval_errors,decline_errors,profit_if_referred_declined,profit_if_referred_approved,share_of_defaults_caught,precision_decline,recall_decline,f1_decline,precision_flagged,recall_flagged,f1_flagged
+2016,0.8217,0.0496,0.1287,0.1928,0.3933,0.5034,43519,17558,12992104.1718,-6618232.6503,0.3473,0.5034,0.267,0.3489,0.4728,0.3473,0.4005
+2017,0.8237,0.0527,0.1236,0.185,0.3721,0.4615,24210,10574,-99872785.3924,-124929334.5152,0.3347,0.4615,0.2491,0.3235,0.4348,0.3347,0.3782
+2018,0.8351,0.0469,0.118,0.1182,0.2448,0.3145,4657,3818,-41637820.4535,-49049302.5377,0.33,0.3145,0.2521,0.2798,0.2947,0.33,0.3114

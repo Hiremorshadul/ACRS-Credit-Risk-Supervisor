@@ -1,0 +1,78 @@
+feature,source_column,encoding,description
+loan_amnt,loan_amnt,numeric,"The listed amount of the loan applied for by the borrower. If at some point in time, the credit department reduces the loan amount, then it will be reflected in this value."
+funded_amnt,funded_amnt,numeric,The total amount committed to that loan at that point in time.
+term,term,ordinal,The number of payments on the loan. Values are in months and can be either 36 or 60.
+int_rate,int_rate,numeric,Interest Rate on the loan
+grade,grade,ordinal,LC assigned loan grade
+sub_grade,sub_grade,ordinal,LC assigned loan subgrade
+emp_length,emp_length,ordinal,Employment length in years. Possible values are between 0 and 10 where 0 means less than one year and 10 means ten or more years. 
+annual_inc,annual_inc,numeric,The self-reported annual income provided by the borrower during registration.
+dti,dti,numeric,"A ratio calculated using the borrower’s total monthly debt payments on the total debt obligations, excluding mortgage and the requested LC loan, divided by the borrower’s self-reported monthly income."
+delinq_2yrs,delinq_2yrs,numeric,The number of 30+ days past-due incidences of delinquency in the borrower's credit file for the past 2 years
+inq_last_6mths,inq_last_6mths,numeric,The number of inquiries in past 6 months (excluding auto and mortgage inquiries)
+open_acc,open_acc,numeric,The number of open credit lines in the borrower's credit file.
+pub_rec,pub_rec,numeric,Number of derogatory public records
+revol_bal,revol_bal,numeric,Total credit revolving balance
+revol_util,revol_util,numeric,"Revolving line utilization rate, or the amount of credit the borrower is using relative to all available revolving credit."
+total_acc,total_acc,numeric,The total number of credit lines currently in the borrower's credit file
+collections_12_mths_ex_med,collections_12_mths_ex_med,numeric,Number of collections in 12 months excluding medical collections
+acc_now_delinq,acc_now_delinq,numeric,The number of accounts on which the borrower is now delinquent.
+tot_coll_amt,tot_coll_amt,numeric,Total collection amounts ever owed
+tot_cur_bal,tot_cur_bal,numeric,Total current balance of all accounts
+total_rev_hi_lim,total_rev_hi_lim,numeric,Total revolving high credit/credit limit
+acc_open_past_24mths,acc_open_past_24mths,numeric,Number of trades opened in past 24 months.
+avg_cur_bal,avg_cur_bal,numeric,Average current balance of all accounts
+bc_open_to_buy,bc_open_to_buy,numeric,Total open to buy on revolving bankcards.
+bc_util,bc_util,numeric,Ratio of total current balance to high credit/credit limit for all bankcard accounts.
+chargeoff_within_12_mths,chargeoff_within_12_mths,numeric,Number of charge-offs within 12 months
+delinq_amnt,delinq_amnt,numeric,The past-due amount owed for the accounts on which the borrower is now delinquent.
+mo_sin_old_il_acct,mo_sin_old_il_acct,numeric,Months since oldest bank installment account opened
+mo_sin_old_rev_tl_op,mo_sin_old_rev_tl_op,numeric,Months since oldest revolving account opened
+mo_sin_rcnt_rev_tl_op,mo_sin_rcnt_rev_tl_op,numeric,Months since most recent revolving account opened
+mo_sin_rcnt_tl,mo_sin_rcnt_tl,numeric,Months since most recent account opened
+mort_acc,mort_acc,numeric,Number of mortgage accounts.
+mths_since_recent_bc,mths_since_recent_bc,numeric,Months since most recent bankcard account opened.
+mths_since_recent_inq,mths_since_recent_inq,numeric,Months since most recent inquiry.
+num_accts_ever_120_pd,num_accts_ever_120_pd,numeric,Number of accounts ever 120 or more days past due
+num_actv_bc_tl,num_actv_bc_tl,numeric,Number of currently active bankcard accounts
+num_actv_rev_tl,num_actv_rev_tl,numeric,Number of currently active revolving trades
+num_bc_sats,num_bc_sats,numeric,Number of satisfactory bankcard accounts
+num_bc_tl,num_bc_tl,numeric,Number of bankcard accounts
+num_il_tl,num_il_tl,numeric,Number of installment accounts
+num_op_rev_tl,num_op_rev_tl,numeric,Number of open revolving accounts
+num_rev_accts,num_rev_accts,numeric,Number of revolving accounts
+num_rev_tl_bal_gt_0,num_rev_tl_bal_gt_0,numeric,Number of revolving trades with balance >0
+num_sats,num_sats,numeric,Number of satisfactory accounts
+num_tl_120dpd_2m,num_tl_120dpd_2m,numeric,Number of accounts currently 120 days past due (updated in past 2 months)
+num_tl_30dpd,num_tl_30dpd,numeric,Number of accounts currently 30 days past due (updated in past 2 months)
+num_tl_90g_dpd_24m,num_tl_90g_dpd_24m,numeric,Number of accounts 90 or more days past due in last 24 months
+num_tl_op_past_12m,num_tl_op_past_12m,numeric,Number of accounts opened in past 12 months
+pct_tl_nvr_dlq,pct_tl_nvr_dlq,numeric,Percent of trades never delinquent
+percent_bc_gt_75,percent_bc_gt_75,numeric,Percentage of all bankcard accounts > 75% of limit.
+pub_rec_bankruptcies,pub_rec_bankruptcies,numeric,Number of public record bankruptcies
+tax_liens,tax_liens,numeric,Number of tax liens
+tot_hi_cred_lim,tot_hi_cred_lim,numeric,Total high credit/credit limit
+total_bal_ex_mort,total_bal_ex_mort,numeric,Total credit balance excluding mortgage
+total_bc_limit,total_bc_limit,numeric,Total bankcard high credit/credit limit
+total_il_high_credit_limit,total_il_high_credit_limit,numeric,Total installment high credit/credit limit
+home_ownership_MORTGAGE,home_ownership,one-hot,"The home ownership status provided by the borrower during registration or obtained from the credit report. Our values are: RENT, OWN, MORTGAGE, OTHER"
+home_ownership_NONE,home_ownership,one-hot,"The home ownership status provided by the borrower during registration or obtained from the credit report. Our values are: RENT, OWN, MORTGAGE, OTHER"
+home_ownership_OTHER,home_ownership,one-hot,"The home ownership status provided by the borrower during registration or obtained from the credit report. Our values are: RENT, OWN, MORTGAGE, OTHER"
+home_ownership_OWN,home_ownership,one-hot,"The home ownership status provided by the borrower during registration or obtained from the credit report. Our values are: RENT, OWN, MORTGAGE, OTHER"
+home_ownership_RENT,home_ownership,one-hot,"The home ownership status provided by the borrower during registration or obtained from the credit report. Our values are: RENT, OWN, MORTGAGE, OTHER"
+verification_status_Source Verified,verification_status,one-hot,"Indicates if income was verified by LC, not verified, or if the income source was verified"
+verification_status_Verified,verification_status,one-hot,"Indicates if income was verified by LC, not verified, or if the income source was verified"
+purpose_credit_card,purpose,one-hot,A category provided by the borrower for the loan request. 
+purpose_debt_consolidation,purpose,one-hot,A category provided by the borrower for the loan request. 
+purpose_educational,purpose,one-hot,A category provided by the borrower for the loan request. 
+purpose_home_improvement,purpose,one-hot,A category provided by the borrower for the loan request. 
+purpose_house,purpose,one-hot,A category provided by the borrower for the loan request. 
+purpose_major_purchase,purpose,one-hot,A category provided by the borrower for the loan request. 
+purpose_medical,purpose,one-hot,A category provided by the borrower for the loan request. 
+purpose_moving,purpose,one-hot,A category provided by the borrower for the loan request. 
+purpose_other,purpose,one-hot,A category provided by the borrower for the loan request. 
+purpose_renewable_energy,purpose,one-hot,A category provided by the borrower for the loan request. 
+purpose_small_business,purpose,one-hot,A category provided by the borrower for the loan request. 
+purpose_vacation,purpose,one-hot,A category provided by the borrower for the loan request. 
+purpose_wedding,purpose,one-hot,A category provided by the borrower for the loan request. 
+initial_list_status_w,initial_list_status,one-hot,"The initial listing status of the loan. Possible values are – W, F"

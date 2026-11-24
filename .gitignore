@@ -47,3 +47,10 @@ desktop.ini
 # ── Model files (too large, regenerate from notebooks) ───────────
 *.pkl
 *.joblib
+
+# ── Local tool folders ──────────────────────────────────────────
+anaconda_projects/
+
+# ── Outputs of the earlier (Nov 5) run, superseded ──────────────
+acrs_data/audit_trail.csv
+acrs_data/fig_roc_capability.png

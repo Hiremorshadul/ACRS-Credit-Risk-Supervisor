@@ -1,0 +1,5 @@
+model,psi_train_vs_val,psi_train_vs_test,status_test
+XGBoost,0.0191,0.003,Stable
+LightGBM,0.0185,0.0036,Stable
+Random Forest,0.0107,0.0022,Stable
+Ensemble,0.0162,0.0027,Stable
