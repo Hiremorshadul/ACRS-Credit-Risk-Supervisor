@@ -1,6 +1,6 @@
 # ACRS results register
 
-Generated 2026-11-21 20:30 by `make_results_register.py` from the files in `acrs_data`.
+Generated 2026-11-24 13:21 by `make_results_register.py` from the files in `acrs_data`.
 Every value below is read from a file written by the notebooks. Nothing is typed by hand.
 
 ## Source files
@@ -9,7 +9,7 @@ The SHA-256 fingerprint identifies the exact file each number came from. If a fi
 
 | File | SHA-256 (first 16 characters) |
 |---|---|
-| `ACRS.ipynb` | `0e4f0a6e9c41ce83` |
+| `ACRS.ipynb` | `23661ae2fb4f0446` |
 | `best_params.json` | `8f973d6644a2aada` |
 | `delayed_label_monitoring_by_month.csv` | `7e6c90122ab2a68e` |
 | `drift_by_year.csv` | `4e76cefcd612eaa4` |
