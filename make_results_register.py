@@ -97,7 +97,7 @@ def flatten(x, prefix=''):
 
 
 # ---------------------------------------------------------------- data and partitions
-section('1. Data and partitions (Tables 3.1 / 4.1)', 'Source: `environment.json`.')
+section('1. Data and partitions (Table 3.2, Section 4.2.1)', 'Source: `environment.json`.')
 if exists('environment.json'):
     env = load_json('environment.json')
     rows = [
@@ -116,7 +116,7 @@ if exists('environment.json'):
         rows.append([f'{part}: default rate', p['default_rate'], f'environment.json → partitions/{part}/default_rate'])
         rows.append([f'{part}: issue dates', f"{p['first']} to {p['last']}", f'environment.json → partitions/{part}/first, last'])
     table(['Number', 'Value', 'Source'], rows)
-    section('Software environment', 'Source: `environment.json`. Use these versions in requirements.txt and Section 3.')
+    section('Software environment (Section 3.4.1)', 'Source: `environment.json`. Use these versions in requirements.txt and Section 3.')
     table(['Item', 'Value'], [[k, env[k]] for k in ['python', 'numpy', 'pandas', 'scikit-learn', 'xgboost', 'lightgbm',
                                                      'shap', 'optuna', 'scipy', 'platform', 'cpu_count', 'seed'] if k in env])
 else:
@@ -139,12 +139,12 @@ if os.path.exists(nb_path):
             if len(parts) == 2 and parts[1].isdigit():
                 rows.append([parts[0].strip(), int(parts[1]), 'ACRS.ipynb output (loan_status counts)'])
         if rows:
-            section('Loan status in the raw file', 'Source: printed output of the executed `ACRS.ipynb`.')
+            section('Loan status in the raw file (Section 4.2.1)', 'Source: printed output of the executed `ACRS.ipynb`.')
             table(['Status', 'Loans', 'Source'], rows)
             used_files.add('../ACRS.ipynb')
 
 if exists('resolved_share_by_year.csv'):
-    section('Maturity by issue year (old comment #12)', 'Source: `resolved_share_by_year.csv`.')
+    section('Maturity by issue year (Table 4.1)', 'Source: `resolved_share_by_year.csv`.')
     r = load_csv('resolved_share_by_year.csv')
     table(list(r[0].keys()), [list(x.values()) for x in r])
 
@@ -192,7 +192,7 @@ if exists('best_params.json'):
 else:
     missing('best_params.json')
 
-section('4. Discrimination with 95% CI (Tables 3.2 / 4.5)', 'Source: `evaluation_results.json` → discrimination.')
+section('4. Discrimination with 95% CI (Table 4.5)', 'Source: `evaluation_results.json` → discrimination.')
 if exists('evaluation_results.json'):
     ev = load_json('evaluation_results.json')
     for split in ['val', 'test']:
@@ -207,7 +207,7 @@ if exists('evaluation_results.json'):
               [[m, l1[m]['val']['f1_at_0.50'], l1[m]['test']['f1_at_0.50'], l1[m]['test']['mean_pd'], l1[m]['test']['default_rate']]
                for m in l1])
 
-    section('5. DeLong and bootstrap tests, ensemble vs each model, test set (replaces Wilcoxon, Table 4.12)',
+    section('5. DeLong and bootstrap tests, ensemble vs each model, test set (Table 4.6)',
             f"Source: `evaluation_results.json` → delong_ensemble_vs, bootstrap_ensemble_vs (bootstrap resamples: {ev.get('n_boot')}).")
     rows = []
     for m, d in ev['delong_ensemble_vs'].items():
@@ -217,7 +217,7 @@ if exists('evaluation_results.json'):
     table(['vs model', 'AUC ensemble', 'AUC model', 'Difference', 'DeLong CI low', 'DeLong CI high', 'z', 'p',
            'Bootstrap CI low', 'Bootstrap CI high', 'Share of resamples ensemble better'], rows)
 
-    section('6. Calibration (new table)', 'Source: `evaluation_results.json` → calibration. Intercept and slope on the log-odds scale.')
+    section('6. Calibration (Table 4.7, Figure 4.2)', 'Source: `evaluation_results.json` → calibration. Intercept and slope on the log-odds scale.')
     for split, ms in ev['calibration'].items():
         lines.append(f'**{split}**\n')
         table(['Model', 'Brier', 'Mean PD', 'Default rate', 'Calibration intercept', 'Calibration slope'],
@@ -226,7 +226,7 @@ if exists('evaluation_results.json'):
     table(['Decile', 'Mean PD', 'Default rate', 'Loans'],
           [[r['bin'], r['mean_pd'], r['default_rate'], r['loans']] for r in ev['reliability_ensemble_test']])
 
-    section('7. Drift decomposition (old comment #13)', 'Source: `evaluation_results.json` → drift, and `drift_by_year.csv`.')
+    section('7. Drift decomposition (Table 4.10, Figure 4.4, Section 4.4.3)', 'Source: `evaluation_results.json` → drift, and `drift_by_year.csv`.')
     table(['Number', 'Value', 'Source'],
           [['Domain classifier ROC-AUC (train vs test borrowers, 5-fold)', ev['drift']['domain_classifier_auc'],
             'evaluation_results.json → drift/domain_classifier_auc']])
@@ -240,7 +240,7 @@ else:
     missing('evaluation_results.json')
 
 # ---------------------------------------------------------------- layer 2
-section('8. Layer 2: PSI (Table 4.6) and SHAP (Table 4.7, Section 4.4.2)', 'Source: `layer2_results.json`.')
+section('8. Layer 2: PSI (Table 4.8) and SHAP (Table 4.9, Section 4.4.2)', 'Source: `layer2_results.json`.')
 if exists('layer2_results.json'):
     l2 = load_json('layer2_results.json')
     table(['Model', 'PSI train vs val', 'PSI train vs test', 'Status (test)'],
@@ -269,7 +269,7 @@ else:
     missing('layer2_results.json')
 
 # ---------------------------------------------------------------- layer 3
-section('9. Layer 3: decision policy, drift detectors, decisions, audit log, latency (Tables 4.8–4.11)',
+section('9. Layer 3: decision policy, drift detectors, decisions, audit log, latency (Tables 4.11–4.17)',
         'Source: `layer3_results.json` and the Layer 3 CSV files.')
 if exists('layer3_results.json'):
     l3 = load_json('layer3_results.json')

@@ -1,6 +1,6 @@
 # ACRS results register
 
-Generated 2026-11-24 13:21 by `make_results_register.py` from the files in `acrs_data`.
+Generated 2026-11-24 14:10 by `make_results_register.py` from the files in `acrs_data`.
 Every value below is read from a file written by the notebooks. Nothing is typed by hand.
 
 ## Source files
@@ -25,7 +25,7 @@ The SHA-256 fingerprint identifies the exact file each number came from. If a fi
 | `policy_threshold_sensitivity.csv` | `e533551d4b38a691` |
 | `resolved_share_by_year.csv` | `d7e846a39d6cfe79` |
 
-## 1. Data and partitions (Tables 3.1 / 4.1)
+## 1. Data and partitions (Table 3.2, Section 4.2.1)
 
 Source: `environment.json`.
 
@@ -50,7 +50,7 @@ Source: `environment.json`.
 | test: issue dates | Jan 2016 to Dec 2018 | environment.json → partitions/test/first, last |
 
 
-## Software environment
+## Software environment (Section 3.4.1)
 
 Source: `environment.json`. Use these versions in requirements.txt and Section 3.
 
@@ -70,7 +70,7 @@ Source: `environment.json`. Use these versions in requirements.txt and Section 3
 | seed | 42 |
 
 
-## Loan status in the raw file
+## Loan status in the raw file (Section 4.2.1)
 
 Source: printed output of the executed `ACRS.ipynb`.
 
@@ -87,7 +87,7 @@ Source: printed output of the executed `ACRS.ipynb`.
 | Default | 31 | ACRS.ipynb output (loan_status counts) |
 
 
-## Maturity by issue year (old comment #12)
+## Maturity by issue year (Table 4.1)
 
 Source: `resolved_share_by_year.csv`.
 
@@ -168,7 +168,7 @@ Source: `best_params.json`.
 | rf | best val ROC-AUC on tuning sample | 0.7341 | best_params.json → best_val_auc_tuning_sample/rf |
 
 
-## 4. Discrimination with 95% CI (Tables 3.2 / 4.5)
+## 4. Discrimination with 95% CI (Table 4.5)
 
 Source: `evaluation_results.json` → discrimination.
 
@@ -203,7 +203,7 @@ F1 at the 0.50 cut-off (reported only for continuity; not a decision threshold).
 | ensemble | 0.0511 | 0.0342 | 0.1696 | 0.2288 |
 
 
-## 5. DeLong and bootstrap tests, ensemble vs each model, test set (replaces Wilcoxon, Table 4.12)
+## 5. DeLong and bootstrap tests, ensemble vs each model, test set (Table 4.6)
 
 Source: `evaluation_results.json` → delong_ensemble_vs, bootstrap_ensemble_vs (bootstrap resamples: 2000).
 
@@ -215,7 +215,7 @@ Source: `evaluation_results.json` → delong_ensemble_vs, bootstrap_ensemble_vs 
 | lr | 0.7112 | 0.7018 | 0.0094 | 0.0088 | 0.0101 | 29.36 | 1.71e-189 | 0.0088 | 0.0101 | 1.0 |
 
 
-## 6. Calibration (new table)
+## 6. Calibration (Table 4.7, Figure 4.2)
 
 Source: `evaluation_results.json` → calibration. Intercept and slope on the log-odds scale.
 
@@ -265,7 +265,7 @@ Source: `evaluation_results.json` → calibration. Intercept and slope on the lo
 | 9 | 0.3929 | 0.4915 | 48,082 |
 
 
-## 7. Drift decomposition (old comment #13)
+## 7. Drift decomposition (Table 4.10, Figure 4.4, Section 4.4.3)
 
 Source: `evaluation_results.json` → drift, and `drift_by_year.csv`.
 
@@ -317,7 +317,7 @@ Source: `evaluation_results.json` → drift, and `drift_by_year.csv`.
 | 2018 | test | 47191 | 0.1473 | 0.1621 | 0.7014 | -0.123 | 0.937 | 0.0953 |
 
 
-## 8. Layer 2: PSI (Table 4.6) and SHAP (Table 4.7, Section 4.4.2)
+## 8. Layer 2: PSI (Table 4.8) and SHAP (Table 4.9, Section 4.4.2)
 
 Source: `layer2_results.json`.
 
@@ -369,7 +369,7 @@ Source: `layer2_results.json`.
 | loan_amnt | 0.0071 |
 
 
-## 9. Layer 3: decision policy, drift detectors, decisions, audit log, latency (Tables 4.8–4.11)
+## 9. Layer 3: decision policy, drift detectors, decisions, audit log, latency (Tables 4.11–4.17)
 
 Source: `layer3_results.json` and the Layer 3 CSV files.
 
